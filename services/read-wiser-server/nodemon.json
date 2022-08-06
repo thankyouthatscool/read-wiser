@@ -1,0 +1,6 @@
+{
+  "exec": "ts-node --esm --transpile-only --files ./src/index.ts",
+  "ext": "ts",
+  "verbose": true,
+  "watch": ["src"]
+}
