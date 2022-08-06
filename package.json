@@ -10,5 +10,8 @@
     "packages": [
       "services/*"
     ]
+  },
+  "scripts": {
+    "start-container": "cd services/docker && docker compose up -d"
   }
 }

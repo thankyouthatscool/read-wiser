@@ -6,9 +6,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "yarn tsc",
     "dev": "yarn nodemon"
   },
   "dependencies": {
+    "@notionhq/client": "^2.1.1",
     "@prisma/client": "^4.1.1",
     "chokidar": "^3.5.3",
     "dotenv": "^16.0.1",

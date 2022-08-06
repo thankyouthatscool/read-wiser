@@ -42,9 +42,9 @@ export const updateDatabase = async (
     })
   );
 
-  const newClippings = fetchedClippings.filter(
-    (clipping) => clipping.newClipping
-  );
+  const newClippings = fetchedClippings.filter((clipping) => {
+    return clipping.newClipping;
+  });
 
   try {
     await prisma.source.createMany({
@@ -111,4 +111,6 @@ export const updateDatabase = async (
       }
     })
   );
+
+  return newClippings;
 };

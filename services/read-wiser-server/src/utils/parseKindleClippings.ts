@@ -42,26 +42,5 @@ export const parseKindleClippings = (path: string) => {
       (clipping) => clipping.type === "highlight" || clipping.type === "note"
     );
 
-  const normalizedClippings = formattedClippings.reduce(
-    (acc, val) => {
-      const { source, ...rest } = val;
-
-      if (acc[val.source]) {
-        return { ...acc, [val.source]: [...acc[val.source], rest] };
-      } else {
-        return { ...acc, [val.source]: [rest] };
-      }
-    },
-    {} as {
-      [key: string]: {
-        content: string;
-        date: string;
-        location: string;
-        page: string;
-        type: string;
-      }[];
-    }
-  );
-
-  return { formattedClippings, normalizedClippings };
+  return formattedClippings;
 };

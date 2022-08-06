@@ -18,11 +18,11 @@ watcher.on("all", async (event, path) => {
   const { ext, name } = parsedPath;
 
   if (event === "add" && ext === ".txt" && name === "My Clippings") {
-    const { formattedClippings, normalizedClippings } =
-      parseKindleClippings(path);
+    const formattedClippings = parseKindleClippings(path);
 
-    await updateDatabase(formattedClippings);
-    await updateNotion(normalizedClippings);
+    const newClippings = await updateDatabase(formattedClippings);
+
+    await updateNotion(newClippings);
   }
 });
 
